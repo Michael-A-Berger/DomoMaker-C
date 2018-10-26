@@ -3,12 +3,12 @@ const Account = models.Account;
 
 // loginPage()
 const loginPage = (rq, rp) => {
-  rp.render('login');
+  rp.render('login', { csrfToken: rq.csrfToken() });
 };
 
 // signupPage()
 const signupPage = (rq, rp) => {
-  rp.render('signup');
+  rp.render('signup', { csrfToken: rq.csrfToken() });
 };
 
 // logout()

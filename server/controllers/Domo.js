@@ -40,7 +40,10 @@ const makerPage = (rq, rp) => {
       return rp.status(400).json({ error: 'An unexpected error occurred' });
     }
 
-    return rp.render('app', { domos: docs });
+    return rp.render('app', {
+      csrfToken: rq.csrfToken(),
+      domos: docs,
+    });
   });
 };
 
